@@ -162,7 +162,7 @@ while playing:
                     fine = int(prices[player_place[i]])/3
                     money[i] -= fine
                     player_receiver = [property_list.index(sub_list)for sub_list in property_list if places[player_place[i]] in sub_list]  # looking for the owner
-                    money[player_receiver[0]] += fine
+                    money[player_receiver[0]] += fine  #player_receiver indexed as list due to comprehension. Since the list will only have one element, we take just the 0th one
                     input('It\'s already bought, you need to pay ' + str(fine) + " euro's\nYou're balance is " + str(money[i]) + "\nplayer " + str(players[player_receiver[0]]) + " now has " + str(money[player_receiver[0]]) + "euro's")
 
                 else:       # if it is not already owned, you are allowed to decide whether to buy or not
